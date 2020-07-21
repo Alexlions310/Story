@@ -1,0 +1,193 @@
+DELL@WIN-DM2N3VAJIET MINGW64 ~
+$ cd Story
+bash: cd: Story: No such file or directory
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~
+$ cd desktop
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop
+$ cd Story
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story
+$ git init
+Initialized empty Git repository in C:/Users/DELL/Desktop/Story/.git/
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ ls -a
+./  ../  .git/  chapter1.txt
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git add chapter1.txt
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   chapter1.txt
+
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git commit -m "Complete Chapter 1"
+[master (root-commit) fc9107f] Complete Chapter 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter1.txt
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git log
+commit fc9107f96c9e484657c16e421bd0117ad9e8f425 (HEAD -> master)
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 07:08:49 2020 +0300
+
+    Complete Chapter 1
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ touch chapter2.txt chapter3.txt
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ open chapter3.txt
+bash: open: command not found
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter2.txt
+        chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git add .
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   chapter2.txt
+        new file:   chapter3.txt
+
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git commit -m "complete chapter 2 and 3"
+[master a67338a] complete chapter 2 and 3
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git log
+commit a67338a30273bbd990b9e6df383c5cd146b489f8 (HEAD -> master)
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 10:12:40 2020 +0300
+
+    complete chapter 2 and 3
+
+commit fc9107f96c9e484657c16e421bd0117ad9e8f425
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 07:08:49 2020 +0300
+
+    Complete Chapter 1
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   chapter3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git diff chapter3.txt
+diff --git a/chapter3.txt b/chapter3.txt
+index f064642..1f3a441 100644
+--- a/chapter3.txt
++++ b/chapter3.txt
+@@ -1 +1 @@
+-I am here chapter3 written by Alex
+\ No newline at end of file
++gfv fgvv fldfhiusdhf7wafbsdf
+\ No newline at end of file
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git checkout chapter3.txt
+Updated 1 path from the index
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git log
+commit a67338a30273bbd990b9e6df383c5cd146b489f8 (HEAD -> master)
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 10:12:40 2020 +0300
+
+    complete chapter 2 and 3
+
+commit fc9107f96c9e484657c16e421bd0117ad9e8f425
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 07:08:49 2020 +0300
+
+    Complete Chapter 1
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git log
+commit a67338a30273bbd990b9e6df383c5cd146b489f8 (HEAD -> master)
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 10:12:40 2020 +0300
+
+    complete chapter 2 and 3
+
+commit fc9107f96c9e484657c16e421bd0117ad9e8f425
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 07:08:49 2020 +0300
+
+    Complete Chapter 1
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git remote add origin https://github.com/Alexlions310/Story.git
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 612 bytes | 306.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Alexlions310/Story.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ git log
+commit a67338a30273bbd990b9e6df383c5cd146b489f8 (HEAD -> master, origin/master)
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 10:12:40 2020 +0300
+
+    complete chapter 2 and 3
+
+commit fc9107f96c9e484657c16e421bd0117ad9e8f425
+Author: Alex <alexlions310@gmail.com>
+Date:   Mon Jul 20 07:08:49 2020 +0300
+
+    Complete Chapter 1
+
+DELL@WIN-DM2N3VAJIET MINGW64 ~/desktop/Story (master)
+$ touch chapter2.txt chapter3.txt
